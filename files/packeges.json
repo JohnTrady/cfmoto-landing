@@ -1,0 +1,32 @@
+{
+    "packeges" : [
+       {
+         "id": "1",
+         "title": "Экскурсия “РИО”",
+         "time" : "1,5 - 2 часа",
+         "long" : "20 - 25 км",
+         "route": "Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис - Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) - Форсаж",
+         "difficulty" : "5***",
+         "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue lacus lacus facilisis orci nibh diam. Nisi, a et sit commodo. Pretium sed consectetur risus elementum, habitasse turpis massa. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit. Gravida et faucibus id tortor augue interdum quam sit diam. Laoreet nulla at et arcu pellentesque massa placerat elit. Adipiscing in nullam ipsum est. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit."
+       },
+       {
+        "id": "2",
+        "title": "РАСШИРЕННЫЙ",
+        "time" : "6 - 8 часа",
+        "long" : "60 - 70 км",
+        "route": "Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис - Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) - Форсаж",
+        "difficulty" : "5***",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue lacus lacus facilisis orci nibh diam. Nisi, a et sit commodo. Pretium sed consectetur risus elementum, habitasse turpis massa. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit. Gravida et faucibus id tortor augue interdum quam sit diam. Laoreet nulla at et arcu pellentesque massa placerat elit. Adipiscing in nullam ipsum est. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit."
+      },
+      {
+        "id": "3",
+        "title": "Experience",
+        "time" : "4 часа",
+        "long" : "40 - 50 км",
+        "route": "Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис - Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) - Форсаж",
+        "difficulty" : "5***",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue lacus lacus facilisis orci nibh diam. Nisi, a et sit commodo. Pretium sed consectetur risus elementum, habitasse turpis massa. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit. Gravida et faucibus id tortor augue interdum quam sit diam. Laoreet nulla at et arcu pellentesque massa placerat elit. Adipiscing in nullam ipsum est. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit."
+      }
+
+    ]
+ }
