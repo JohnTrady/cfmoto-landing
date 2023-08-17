@@ -155,17 +155,6 @@ h6 {
   font-size: inherit;
 }
 
-html.lock {
-  overflow: hidden;
-  -ms-touch-action: none;
-      touch-action: none;
-  -webkit-overflow-scrolling: none;
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
-  min-height: 100vh;
-  position: relative;
-}
-
 .lock body {
   overflow: hidden;
   -ms-touch-action: none;
