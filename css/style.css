@@ -27,7 +27,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-._icon-arrrow-left:before {
+._icon-arrow-left:before {
   content: "\e900";
 }
 
