@@ -6271,9 +6271,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding: 0 0.625rem;
   }
 
-  .contacts__map {
-    margin: 0 -0.9375rem;
-  }
+
 }
 
 @media (max-width: 22.49875em) {
