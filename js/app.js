@@ -8836,7 +8836,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 packegeRoute.innerHTML = data.packeges[id - 1].route;
             };
             async function getPackege(id) {
-                const file = 'files/packeges.json';
+                const file = "files/packeges.json";
                 let response = await fetch(file, {
                     method: "GET"
                 });
