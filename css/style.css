@@ -155,6 +155,12 @@ h6 {
   font-size: inherit;
 }
 
+html.lock {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
 .lock body {
   overflow: hidden;
   -ms-touch-action: none;
