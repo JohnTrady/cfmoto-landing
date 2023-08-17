@@ -157,8 +157,8 @@ h6 {
 
 html.lock {
   overflow: hidden;
-  position: relative;
-  height: 100%;
+  /* position: relative;
+  height: 100%; */
 }
 
 .lock body {
