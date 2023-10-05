@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,800,900/&display=swap);
 
-@charset "UTF-8";
+
 
 @font-face {
   font-family: "icomoon";
@@ -5796,8 +5796,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .offers__items {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[2]; 
+     grid-template-columns: repeat(2, 1fr);
   }
 
 @supports (gap: clamp( 0.9375rem , -3.7495312891rem  +  6.2494792101vw , 1.875rem )) {
@@ -6396,6 +6396,28 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     color: #FFF;
   }
 }
+
+
+@media screen and (orientation: landscape) {
+  @supports (height: clamp( 40rem , 34.495049505rem  +  27.5247524752vw , 57.375rem )) {
+      .main-slider .swiper-wrapper {
+        height: clamp( 40rem , 34.495049505rem  +  27.5247524752vw , 57.375rem );
+      }
+  }
+  
+  @supports not (height: clamp( 40rem , 34.495049505rem  +  27.5247524752vw , 57.375rem )) {
+      .main-slider .swiper-wrapper {
+        height: calc(40rem + 17.375 * (100vw - 20rem) / 63.125);
+      }
+  }
+  
+    .controls-main-slider {
+      bottom: 25%;
+    }
+  }
+
+
+
 
 .webp .popup-packege-item__reservation{ background: url(../img/bg-images/bg-gruop-image.webp) center/cover no-repeat; }
 
