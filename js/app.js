@@ -8844,7 +8844,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 loadMap();
             }
             async function getPackege(id) {
-                const file = "../files/packeges.json";
+                const file = "files/packeges.json";
                 let response = await fetch(file, {
                     method: "GET"
                 });
