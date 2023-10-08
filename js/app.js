@@ -8839,9 +8839,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 const map = document.querySelector(".contacts__map");
                 const loadMap = () => {
                     const mapLink = document.querySelector(".contacts__map noscript");
-                    const div = document.createElement("div");
-                    div.innerHTML = mapLink.innerHTML;
-                    map.insertAdjacentElement("beforeend", div);
+                    map.innerHTML += mapLink.innerHTML;
                 };
                 loadMap();
             }
