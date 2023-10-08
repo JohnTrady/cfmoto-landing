@@ -8835,8 +8835,16 @@ PERFORMANCE OF THIS SOFTWARE.
                 packegeDifficulty.innerHTML = data.packeges[id - 1].difficulty;
                 packegeRoute.innerHTML = data.packeges[id - 1].route;
             };
+            if (document.querySelector(".contacts__map")) {
+                const map = document.querySelector(".contacts__map");
+                const loadMap = () => {
+                    const mapLink = document.querySelector(".contacts__map noscript");
+                    map.innerHTML += mapLink.innerHTML;
+                };
+                loadMap();
+            }
             async function getPackege(id) {
-                const file = "files/packeges.json";
+                const file = "../../files/packeges.json";
                 let response = await fetch(file, {
                     method: "GET"
                 });
