@@ -5830,6 +5830,137 @@
             }));
             return params;
         }
+        function Navigation({swiper, extendParams, on, emit}) {
+            extendParams({
+                navigation: {
+                    nextEl: null,
+                    prevEl: null,
+                    hideOnClick: false,
+                    disabledClass: "swiper-button-disabled",
+                    hiddenClass: "swiper-button-hidden",
+                    lockClass: "swiper-button-lock",
+                    navigationDisabledClass: "swiper-navigation-disabled"
+                }
+            });
+            swiper.navigation = {
+                nextEl: null,
+                $nextEl: null,
+                prevEl: null,
+                $prevEl: null
+            };
+            function getEl(el) {
+                let $el;
+                if (el) {
+                    $el = dom(el);
+                    if (swiper.params.uniqueNavElements && typeof el === "string" && $el.length > 1 && swiper.$el.find(el).length === 1) $el = swiper.$el.find(el);
+                }
+                return $el;
+            }
+            function toggleEl($el, disabled) {
+                const params = swiper.params.navigation;
+                if ($el && $el.length > 0) {
+                    $el[disabled ? "addClass" : "removeClass"](params.disabledClass);
+                    if ($el[0] && $el[0].tagName === "BUTTON") $el[0].disabled = disabled;
+                    if (swiper.params.watchOverflow && swiper.enabled) $el[swiper.isLocked ? "addClass" : "removeClass"](params.lockClass);
+                }
+            }
+            function update() {
+                if (swiper.params.loop) return;
+                const {$nextEl, $prevEl} = swiper.navigation;
+                toggleEl($prevEl, swiper.isBeginning && !swiper.params.rewind);
+                toggleEl($nextEl, swiper.isEnd && !swiper.params.rewind);
+            }
+            function onPrevClick(e) {
+                e.preventDefault();
+                if (swiper.isBeginning && !swiper.params.loop && !swiper.params.rewind) return;
+                swiper.slidePrev();
+                emit("navigationPrev");
+            }
+            function onNextClick(e) {
+                e.preventDefault();
+                if (swiper.isEnd && !swiper.params.loop && !swiper.params.rewind) return;
+                swiper.slideNext();
+                emit("navigationNext");
+            }
+            function init() {
+                const params = swiper.params.navigation;
+                swiper.params.navigation = create_element_if_not_defined_createElementIfNotDefined(swiper, swiper.originalParams.navigation, swiper.params.navigation, {
+                    nextEl: "swiper-button-next",
+                    prevEl: "swiper-button-prev"
+                });
+                if (!(params.nextEl || params.prevEl)) return;
+                const $nextEl = getEl(params.nextEl);
+                const $prevEl = getEl(params.prevEl);
+                if ($nextEl && $nextEl.length > 0) $nextEl.on("click", onNextClick);
+                if ($prevEl && $prevEl.length > 0) $prevEl.on("click", onPrevClick);
+                Object.assign(swiper.navigation, {
+                    $nextEl,
+                    nextEl: $nextEl && $nextEl[0],
+                    $prevEl,
+                    prevEl: $prevEl && $prevEl[0]
+                });
+                if (!swiper.enabled) {
+                    if ($nextEl) $nextEl.addClass(params.lockClass);
+                    if ($prevEl) $prevEl.addClass(params.lockClass);
+                }
+            }
+            function destroy() {
+                const {$nextEl, $prevEl} = swiper.navigation;
+                if ($nextEl && $nextEl.length) {
+                    $nextEl.off("click", onNextClick);
+                    $nextEl.removeClass(swiper.params.navigation.disabledClass);
+                }
+                if ($prevEl && $prevEl.length) {
+                    $prevEl.off("click", onPrevClick);
+                    $prevEl.removeClass(swiper.params.navigation.disabledClass);
+                }
+            }
+            on("init", (() => {
+                if (swiper.params.navigation.enabled === false) disable(); else {
+                    init();
+                    update();
+                }
+            }));
+            on("toEdge fromEdge lock unlock", (() => {
+                update();
+            }));
+            on("destroy", (() => {
+                destroy();
+            }));
+            on("enable disable", (() => {
+                const {$nextEl, $prevEl} = swiper.navigation;
+                if ($nextEl) $nextEl[swiper.enabled ? "removeClass" : "addClass"](swiper.params.navigation.lockClass);
+                if ($prevEl) $prevEl[swiper.enabled ? "removeClass" : "addClass"](swiper.params.navigation.lockClass);
+            }));
+            on("click", ((_s, e) => {
+                const {$nextEl, $prevEl} = swiper.navigation;
+                const targetEl = e.target;
+                if (swiper.params.navigation.hideOnClick && !dom(targetEl).is($prevEl) && !dom(targetEl).is($nextEl)) {
+                    if (swiper.pagination && swiper.params.pagination && swiper.params.pagination.clickable && (swiper.pagination.el === targetEl || swiper.pagination.el.contains(targetEl))) return;
+                    let isHidden;
+                    if ($nextEl) isHidden = $nextEl.hasClass(swiper.params.navigation.hiddenClass); else if ($prevEl) isHidden = $prevEl.hasClass(swiper.params.navigation.hiddenClass);
+                    if (isHidden === true) emit("navigationShow"); else emit("navigationHide");
+                    if ($nextEl) $nextEl.toggleClass(swiper.params.navigation.hiddenClass);
+                    if ($prevEl) $prevEl.toggleClass(swiper.params.navigation.hiddenClass);
+                }
+            }));
+            const enable = () => {
+                swiper.$el.removeClass(swiper.params.navigation.navigationDisabledClass);
+                init();
+                update();
+            };
+            const disable = () => {
+                swiper.$el.addClass(swiper.params.navigation.navigationDisabledClass);
+                destroy();
+            };
+            Object.assign(swiper.navigation, {
+                enable,
+                disable,
+                update,
+                init,
+                destroy
+            });
+        }
         function classes_to_selector_classesToSelector(classes = "") {
             return `.${classes.trim().replace(/([\.:!\/])/g, "\\$1").replace(/ /g, ".")}`;
         }
@@ -6178,7 +6309,189 @@
                 setTransition(duration);
             }));
         }
+        function Autoplay({swiper, extendParams, on, emit}) {
+            let timeout;
+            swiper.autoplay = {
+                running: false,
+                paused: false
+            };
+            extendParams({
+                autoplay: {
+                    enabled: false,
+                    delay: 3e3,
+                    waitForTransition: true,
+                    disableOnInteraction: true,
+                    stopOnLastSlide: false,
+                    reverseDirection: false,
+                    pauseOnMouseEnter: false
+                }
+            });
+            function run() {
+                if (!swiper.size) {
+                    swiper.autoplay.running = false;
+                    swiper.autoplay.paused = false;
+                    return;
+                }
+                const $activeSlideEl = swiper.slides.eq(swiper.activeIndex);
+                let delay = swiper.params.autoplay.delay;
+                if ($activeSlideEl.attr("data-swiper-autoplay")) delay = $activeSlideEl.attr("data-swiper-autoplay") || swiper.params.autoplay.delay;
+                clearTimeout(timeout);
+                timeout = utils_nextTick((() => {
+                    let autoplayResult;
+                    if (swiper.params.autoplay.reverseDirection) if (swiper.params.loop) {
+                        swiper.loopFix();
+                        autoplayResult = swiper.slidePrev(swiper.params.speed, true, true);
+                        emit("autoplay");
+                    } else if (!swiper.isBeginning) {
+                        autoplayResult = swiper.slidePrev(swiper.params.speed, true, true);
+                        emit("autoplay");
+                    } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                        autoplayResult = swiper.slideTo(swiper.slides.length - 1, swiper.params.speed, true, true);
+                        emit("autoplay");
+                    } else stop(); else if (swiper.params.loop) {
+                        swiper.loopFix();
+                        autoplayResult = swiper.slideNext(swiper.params.speed, true, true);
+                        emit("autoplay");
+                    } else if (!swiper.isEnd) {
+                        autoplayResult = swiper.slideNext(swiper.params.speed, true, true);
+                        emit("autoplay");
+                    } else if (!swiper.params.autoplay.stopOnLastSlide) {
+                        autoplayResult = swiper.slideTo(0, swiper.params.speed, true, true);
+                        emit("autoplay");
+                    } else stop();
+                    if (swiper.params.cssMode && swiper.autoplay.running) run(); else if (autoplayResult === false) run();
+                }), delay);
+            }
+            function start() {
+                if (typeof timeout !== "undefined") return false;
+                if (swiper.autoplay.running) return false;
+                swiper.autoplay.running = true;
+                emit("autoplayStart");
+                run();
+                return true;
+            }
+            function stop() {
+                if (!swiper.autoplay.running) return false;
+                if (typeof timeout === "undefined") return false;
+                if (timeout) {
+                    clearTimeout(timeout);
+                    timeout = void 0;
+                }
+                swiper.autoplay.running = false;
+                emit("autoplayStop");
+                return true;
+            }
+            function pause(speed) {
+                if (!swiper.autoplay.running) return;
+                if (swiper.autoplay.paused) return;
+                if (timeout) clearTimeout(timeout);
+                swiper.autoplay.paused = true;
+                if (speed === 0 || !swiper.params.autoplay.waitForTransition) {
+                    swiper.autoplay.paused = false;
+                    run();
+                } else [ "transitionend", "webkitTransitionEnd" ].forEach((event => {
+                    swiper.$wrapperEl[0].addEventListener(event, onTransitionEnd);
+                }));
+            }
+            function onVisibilityChange() {
+                const document = ssr_window_esm_getDocument();
+                if (document.visibilityState === "hidden" && swiper.autoplay.running) pause();
+                if (document.visibilityState === "visible" && swiper.autoplay.paused) {
+                    run();
+                    swiper.autoplay.paused = false;
+                }
+            }
+            function onTransitionEnd(e) {
+                if (!swiper || swiper.destroyed || !swiper.$wrapperEl) return;
+                if (e.target !== swiper.$wrapperEl[0]) return;
+                [ "transitionend", "webkitTransitionEnd" ].forEach((event => {
+                    swiper.$wrapperEl[0].removeEventListener(event, onTransitionEnd);
+                }));
+                swiper.autoplay.paused = false;
+                if (!swiper.autoplay.running) stop(); else run();
+            }
+            function onMouseEnter() {
+                if (swiper.params.autoplay.disableOnInteraction) stop(); else {
+                    emit("autoplayPause");
+                    pause();
+                }
+                [ "transitionend", "webkitTransitionEnd" ].forEach((event => {
+                    swiper.$wrapperEl[0].removeEventListener(event, onTransitionEnd);
+                }));
+            }
+            function onMouseLeave() {
+                if (swiper.params.autoplay.disableOnInteraction) return;
+                swiper.autoplay.paused = false;
+                emit("autoplayResume");
+                run();
+            }
+            function attachMouseEvents() {
+                if (swiper.params.autoplay.pauseOnMouseEnter) {
+                    swiper.$el.on("mouseenter", onMouseEnter);
+                    swiper.$el.on("mouseleave", onMouseLeave);
+                }
+            }
+            function detachMouseEvents() {
+                swiper.$el.off("mouseenter", onMouseEnter);
+                swiper.$el.off("mouseleave", onMouseLeave);
+            }
+            on("init", (() => {
+                if (swiper.params.autoplay.enabled) {
+                    start();
+                    const document = ssr_window_esm_getDocument();
+                    document.addEventListener("visibilitychange", onVisibilityChange);
+                    attachMouseEvents();
+                }
+            }));
+            on("beforeTransitionStart", ((_s, speed, internal) => {
+                if (swiper.autoplay.running) if (internal || !swiper.params.autoplay.disableOnInteraction) swiper.autoplay.pause(speed); else stop();
+            }));
+            on("sliderFirstMove", (() => {
+                if (swiper.autoplay.running) if (swiper.params.autoplay.disableOnInteraction) stop(); else pause();
+            }));
+            on("touchEnd", (() => {
+                if (swiper.params.cssMode && swiper.autoplay.paused && !swiper.params.autoplay.disableOnInteraction) run();
+            }));
+            on("destroy", (() => {
+                detachMouseEvents();
+                if (swiper.autoplay.running) stop();
+                const document = ssr_window_esm_getDocument();
+                document.removeEventListener("visibilitychange", onVisibilityChange);
+            }));
+            Object.assign(swiper.autoplay, {
+                pause,
+                run,
+                start,
+                stop
+            });
+        }
         function initSliders() {
+            if (document.querySelector(".main-slider")) new core(".main-slider", {
+                modules: [ Navigation, Pagination, Parallax, Autoplay ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                parallax: true,
+                direction: "horizontal",
+                loop: true,
+                autoplay: {
+                    delay: 3e3,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: ".controls-main-slider__pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {},
+                    768: {
+                        direction: "vertical"
+                    }
+                },
+                on: {}
+            });
             if (document.querySelector(".packege-slider")) new core(".packege-slider", {
                 modules: [ Pagination, Parallax, Mousewheel ],
                 observer: true,
@@ -6190,29 +6503,6 @@
                 loop: true,
                 pagination: {
                     el: ".packege-slider_base .packeges-slider__pagintion",
-                    clickable: true
-                },
-                breakpoints: {
-                    320: {},
-                    768: {},
-                    991.98: {}
-                }
-            });
-            if (document.querySelector(".slider-gallery ")) new core(".slider-gallery", {
-                modules: [ Pagination, Parallax, Mousewheel ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: "auto",
-                spaceBetween: 30,
-                speed: 800,
-                parallax: true,
-                centeredSlides: true,
-                mousewheel: {
-                    sensitivity: 1
-                },
-                loop: true,
-                pagination: {
-                    el: ".gallery__pagination",
                     clickable: true
                 },
                 breakpoints: {
