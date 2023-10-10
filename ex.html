@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231010201221">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header data-scroll class="header">
+			<div class="header__wrapper">
+				<div class="header__container">
+					<div class="header__logo">
+						<a href="home.html ">
+							<picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Logo"></picture>
+						</a>
+					</div>
+					<div class="header__body">
+						<nav class="header__menu menu ">
+							<ul class="menu__list ">
+								<li class="menu__item">
+									<a data-goto-header data-goto="#packeges" href="#" class="menu__link">маршруты</a>
+								</li>
+								<li data-goto="#gallery" data-goto-header class="menu__item">
+									<a href="#" class="menu__link">галерея</a>
+								</li>
+								<li class="menu__item">
+									<a data-goto="#questions" data-goto-header href="#" class="menu__link">вопрос-ответ</a>
+								</li>
+								<li class="menu__item">
+									<a data-goto="#contacts" data-goto-header href="#" class="menu__link">контакты</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" data-popup="#reservation" class="menu__link menu__link-green">забранировать</a>
+								</li>
+
+							</ul>
+						</nav>
+						<div data-da=".menu,767.98" class="header__phone phone-header">
+							<a href="tel:+79283332645" class="phone-header__number _icon-phone">+7 928 333 26 45</a>
+							<button type="button" class="phone-header__callback"><span>Перезвоните мне</span></button>
+						</div>
+						<button hidden type="button" class="icon-menu"><span></span></button>
+					</div>
+
+
+				</div>
+			</div>
+
+		</header>
+		<main class="page">
+			<div>
+				<!-- Slider main container -->
+				<div class="swiper">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide"><picture><source srcset="https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480" type="image/webp"><img class="opacatity" src="https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480" alt=""></picture></div>
+						<div class="swiper-slide"><picture><source srcset="https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480" type="image/webp"><img class="opacatity" src="https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480" alt=""></picture></div>
+						<div class="swiper-slide"><picture><source srcset="https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480" type="image/webp"><img class="opacatity" src="https://avatars.mds.yandex.net/i?id=e708784c502029fd3580605e76109216_l-5761336-images-thumbs&n=27&h=384&w=480" alt=""></picture></div>
+					</div>
+					<!-- If we need pagination -->
+					<div class="swiper-pagination"></div>
+
+					<!-- If we need navigation buttons -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+
+					<!-- If we need scrollbar -->
+					<div class="swiper-scrollbar"></div>
+				</div>
+			</div>
+			<div class="image"></div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<a href="#" class="footer__logo">
+						<picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Logo"></picture>
+					</a>
+					<nav class="footer__menu">
+						<ul class="footer__list">
+							<li class="footer__item">
+								<a data-goto="#packeges" data-goto-header href="#" class="footer__link">Маршруты</a>
+							</li>
+							<li class="footer__item">
+								<a data-goto="#gallery" data-goto-header href="#" class="footer__link">Галерея</a>
+							</li>
+							<li class="footer__item">
+								<a data-goto="#questions" data-goto-header href="#" class="footer__link">Вопрос-Ответ</a>
+							</li>
+							<li class="footer__item">
+								<a data-goto="#contacts" data-goto-header href="#" class="footer__link">Контакты</a>
+							</li>
+							<li class="footer__item">
+								<a data-goto="#terms" data-goto-header href="#" class="footer__link">Условия</a>
+							</li>
+							<li class="footer__item">
+								<a data-goto="#offers" data-goto-header href="#" class="footer__link">СПЕЦПРЕДЛОЖЕНИЯ</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer__copy">
+					<p>© CFMOTO Experience Kuban. Внедорожный полигон CFMOTO и прокат квадроциклов в Геленджике</p>
+				</div>
+
+			</div>
+		</footer>
+	</div>
+	<div id="packege-item__popup" aria-hidden="true" class="popup packege-item__popup popup-packege-item">
+
+		<div class="popup__wrapper">
+
+			<div class="popup__container">
+				<button data-close type="button" class="popup__close _icon-cross"></button>
+			</div>
+			<div class="popup__content">
+
+				<div class="popup__text ">
+					<section class="popup-packege-item__main">
+						<div class="popup-packege-item-container">
+							<div class="packeges__item ">
+								<div class="packeges__content content-packege">
+									<div class="content-packege__header">
+										<h3 class="content-packege__title popup-packege__title">Экскурсия “РИО”</h3>
+
+									</div>
+									<div class="content-packege__condtitons">
+										<div class="content-packege__time _icon-route popup-packege__time">Время в пути:<span>1,5 - 2 часа</span></div>
+										<div class="content-packege__long _icon-distance popup-packege__long">Расстояние:<span> 20 - 25 км</span></div>
+										<div class="content-packege__difficulty popup-packege__difficulty _icon-raiting">Сложность:<span>5***</span></div>
+									</div>
+									<div class="content-packege__route route-content">
+										<div class="route-content__title">маршрут <span></span></div>
+										<div class="route-content__text popup-packege__route">
+											<p>Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис -
+												-Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) -
+												-Форсаж</p>
+										</div>
+									</div>
+									<div class="content-packege__actions actions-packege">
+										<button data-popup="#packege-item__popup" type="button" class="actions-packege__button button button_border">Схема маршрута</button>
+
+									</div>
+								</div>
+								<div class="packeges__slider  packege-slider_popup  js-packege-slider_popup ">
+									<div class="packege-slider   swiper">
+										<div class="packege-slider__wrapper swiper-wrapper">
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image01.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image01.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image02.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image02.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image03.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image03.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image01.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image01.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image02.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image02.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image03.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image03.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="packeges-slider__controls">
+										<div class="packeges-slider__pagintion slider-pagination"></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="popup-packege-item__description">
+						<div class="popup-packege-item-container">
+							<h2 class="popup-packege__title">Что посмотрим на маршруте:</h2>
+							<div class="popup-packege-item__text">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue lacus lacus facilisis orci nibh diam. Nisi, a et sit commodo. Pretium sed consectetur risus elementum, habitasse turpis massa.
+
+									In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit. Gravida et faucibus id tortor augue interdum quam sit diam. Laoreet nulla at et arcu pellentesque massa placerat elit. Adipiscing in nullam ipsum est. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit. </p>
+							</div>
+						</div>
+
+					</section>
+					<section class="popup-packege-item__bikes popup-bikes">
+						<div class="popup-packege-item-container">
+							<h2 class="popup-packege__title">Стоимость экскурсии
+								за 1 квадроцикл:</h2>
+							<div class="popup-bikes__items">
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image01.webp" type="image/webp"><img src="img/popup-packeges/bike-image01.jpg" alt="UFORCE 1000 EPS (U10 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">UFORCE 1000 EPS (U10 EPS)</div>
+										<div class="item-popup-bike__price">4000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image02.webp" type="image/webp"><img src="img/popup-packeges/bike-image02.jpg" alt="CFORCE 1000 EPS (X10 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">CFORCE 1000 EPS (X10 EPS)</div>
+										<div class="item-popup-bike__price">6000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image02.webp" type="image/webp"><img src="img/popup-packeges/bike-image02.jpg" alt="CFMOTO CFORCE 600 EPS"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">CFMOTO CFORCE 600 EPS</div>
+										<div class="item-popup-bike__price">7000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image04.webp" type="image/webp"><img src="img/popup-packeges/bike-image04.jpg" alt="CFORCE 400L EPS (X4 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">CFORCE 400L EPS (X4 EPS)</div>
+										<div class="item-popup-bike__price">8000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image05.webp" type="image/webp"><img src="img/popup-packeges/bike-image05.jpg" alt="ZFORCE 1000"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">ZFORCE 1000</div>
+										<div class="item-popup-bike__price">9000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image01.webp" type="image/webp"><img src="img/popup-packeges/bike-image01.jpg" alt="UFORCE 1000 EPS (U10 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">UFORCE 1000 EPS (U10 EPS)</div>
+										<div class="item-popup-bike__price">4000<span></span></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</section>
+					<section class="popup-packege-item__reservation">
+						<div class="popup-packege-item-container">
+							<h2 class="popup-packege__title">Бронирование онлайн</h2>
+							<form action="#" class="popup-form_reservation form-popup">
+								<div class="form-popup__body">
+									<div class="form-popup__item">
+										<div class="form-popup__label">Желаемая дата</div>
+										<div class="form-popup__datepicker  _icon-datepicker form-popup__input ">
+											<input type="text" id="input-datepicker" autocomplete="off" name="form[]" data-error="Выберите дату" data-required>
+										</div>
+
+									</div>
+									<div class="form-popup__item">
+										<div class="form-popup__label">Количество человек</div>
+										<div class="form-popup__quantity quantity form-popup__input">
+											<button type="button" class="quantity__button quantity__button_minus"><span></span></button>
+											<div class="quantity__input">
+												<input type="text" autocomplete="off" name="form[]" value="1">
+											</div>
+											<button type="button" class="quantity__button quantity__button_plus"><span></span></button>
+										</div>
+										<!-- <input type="text" class="form-popup__input form-popup__quantity"> -->
+									</div>
+									<div class="form-popup__item">
+										<div class="form-popup__label">Телефон или WhatsApp</div>
+										<div class="form-popup__input form-popup__phone _icon-phone">
+											<input class="" id="inpute-phone" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="phone">
+										</div>
+
+									</div>
+									<div class="form-popup__item">
+										<div class="form-popup__label">Как к Вам обращаться?</div>
+										<div class="form-popup__input form-popup__phone _icon-user">
+											<input class="" id="inpute-name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="" placeholder="">
+										</div>
+
+									</div>
+								</div>
+								<button type="submit" class="form-popup__button button">Забронировать</button>
+
+							</form>
+						</div>
+
+
+					</section>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div id="reservation" aria-hidden="true" class="popup popup-reservaton ">
+
+		<div class="popup__wrapper">
+
+			<div class="popup__container">
+				<button data-close type="button" class="popup__close _icon-cross"></button>
+			</div>
+			<div class="popup__content  popup-reservaton__content">
+
+				<div class="popup__text ">
+					<div class="popup-reservation__body">
+						<h2 class="popup-reservation__title">Оставить заявку</h2>
+						<form action="#" class="popup-reservation__form form-reservation">
+							<div class="form-reservation__body">
+								<div class="form-reservation__item form-popup__item">
+									<div class="form-reservation__label form-popup__label">Как к Вам обращаться?</div>
+									<div class="form-reservation__phone form-popup__input form-popup__phone _icon-user">
+										<input class="" id="input-reservation-phone" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="" placeholder="">
+									</div>
+								</div>
+								<div class="form-reservation__item form-popup__item">
+									<div class="form-reservation__label form-popup__label">Телефон или WhatsApp</div>
+									<div class="form-reservation__input form-popup__input form-popup__phone _icon-phone">
+										<input class="" id="input-reservation-phone" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="phone">
+									</div>
+
+								</div>
+
+							</div>
+							<button type="submit" class="form-popup__button button">Забронировать</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<script src="js/app.min.js?_v=20231010201221"></script>
+
+</body>
+
+</html>

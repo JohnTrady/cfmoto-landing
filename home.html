@@ -5,10 +5,10 @@
 	<title>Главная</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	
-	<link rel="stylesheet" href="css/style.min.css?_v=20230815205653">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231010201221">
 	<link rel="shortcut icon" href="favicon.ico">
-
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -336,33 +336,33 @@
 					<h2 class="gallery__title _title">Фото</h2>
 					<div class="gallery__body">
 						<div class="gallery__slider slider-gallery swiper">
-							<div  class="slider-gallery__wrapper swiper-wrapper">
-								<a  class="slider-gallery__slide swiper-slide">
+							<div data-gallery class="slider-gallery__wrapper swiper-wrapper">
+								<a href="img/gallery/gallery-Image01.jpg" class="slider-gallery__slide swiper-slide">
 									<div class="slider-gallery__image slider-gallery__image-ibg">
 										<picture><source srcset="img/gallery/gallery-Image01.webp" type="image/webp"><img src="img/gallery/gallery-Image01.jpg" alt="Image"></picture>
 									</div>
 								</a>
-								<a class="slider-gallery__slide swiper-slide">
+								<a href="img/gallery/gallery-Image02.jpg" class="slider-gallery__slide swiper-slide">
 									<div class="slider-gallery__image slider-gallery__image-ibg">
 										<picture><source srcset="img/gallery/gallery-Image02.webp" type="image/webp"><img src="img/gallery/gallery-Image02.jpg" alt="Image"></picture>
 									</div>
 								</a>
-								<a  class="slider-gallery__slide swiper-slide">
+								<a href="img/gallery/gallery-Image03.jpg" class="slider-gallery__slide swiper-slide">
 									<div class="slider-gallery__image slider-gallery__image-ibg">
 										<picture><source srcset="img/gallery/gallery-Image03.webp" type="image/webp"><img src="img/gallery/gallery-Image03.jpg" alt="Image"></picture>
 									</div>
 								</a>
-								<a class="slider-gallery__slide swiper-slide">
+								<a href="img/packeges/packe-extended/packege-extended-image01.jpg" class="slider-gallery__slide swiper-slide">
 									<div class="slider-gallery__image slider-gallery__image-ibg">
 										<picture><source srcset="img/packeges/packe-extended/packege-extended-image01.webp" type="image/webp"><img src="img/packeges/packe-extended/packege-extended-image01.jpg" alt="Image"></picture>
 									</div>
 								</a>
-								<a  class="slider-gallery__slide swiper-slide">
+								<a href="img/packeges/packege-base/packege-base-image03.jpg" class="slider-gallery__slide swiper-slide">
 									<div class="slider-gallery__image slider-gallery__image-ibg">
 										<picture><source srcset="img/packeges/packege-base/packege-base-image03.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image03.jpg" alt="Image"></picture>
 									</div>
 								</a>
-								<a class="slider-gallery__slide swiper-slide">
+								<a href="img/packeges/packege-experience/packege-experience-image02.jpg" class="slider-gallery__slide swiper-slide">
 									<div class="slider-gallery__image slider-gallery__image-ibg">
 										<picture><source srcset="img/packeges/packege-experience/packege-experience-image02.webp" type="image/webp"><img src="img/packeges/packege-experience/packege-experience-image02.jpg" alt="Image"></picture>
 									</div>
@@ -378,22 +378,19 @@
 			</section>
 			<div class="page__video video">
 				<div class="video__bg">
-					<picture>
-						<source srcset="img/bg-images/video-bg-image.webp" type="image/webp">
-						<img src="img/bg-images/video-bg-image.jpg" alt="">
-					</picture>
+					<picture><source srcset="img/bg-images/video-bg-image.webp" type="image/webp"><img src="img/bg-images/video-bg-image.jpg" alt=""></picture>
 				</div>
 				<div class="video__container">
-					<div  class="video__body">
-							
-						<a href="#" class="video__image video__image-ibg _icon-video-button" >
-						   <img src="img/gallery/gallery-Image04.jpg" alt="">
-						   <div class="video__title">Название видео</div>
-						</a>
-						
-				   </div>
 
-					
+
+					<div data-gallery class="video__body">
+
+						<a class="video__image video__image-ibg _icon-video-button" href="https://www.youtube.com/lJIrF4YjHfQ" data-src="https://www.youtube.com/lJIrF4YjHfQ">
+							<picture><source srcset="img/gallery/gallery-Image04.webp" type="image/webp"><img src="img/gallery/gallery-Image04.jpg" alt=""></picture>
+							<div class="video__title">Название видео</div>
+						</a>
+
+					</div>
 				</div>
 			</div>
 			<section class="page__staff staff">
@@ -689,7 +686,7 @@
 								   видеосъемка">
 							</a>
 							<a href="#" class="item-services__title">
-								Фото, видеосъемка
+								Фото,видеосъемка
 							</a>
 						</div>
 						<div class="services__item item-services">
@@ -780,9 +777,12 @@
 							</div>
 						</div>
 					</div>
-					<div  data-da=".contacts__body,991.98,1" class=" contacts__map">
-						
-					
+					<div data-watch="map" data-da=".contacts__body,991.98,1" class=" contacts__map">
+						<!-- <noscript>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45470.71095068748!2d38.0408441!3d44.57821695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f18f4e2e7fb9ad%3A0x9c7bc0b3f2a23016!2z0JPQtdC70LXQvdC00LbQuNC6LCDQmtGA0LDRgdC90L7QtNCw0YDRgdC60LjQuSDQutGA0LDQuQ!5e0!3m2!1sru!2sru!4v1691061056459!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</noscript> -->
+
+
 					</div>
 				</div>
 			</section>
@@ -823,7 +823,302 @@
 			</div>
 		</footer>
 	</div>
+	<div id="packege-item__popup" aria-hidden="true" class="popup packege-item__popup popup-packege-item">
 
+		<div class="popup__wrapper">
+
+			<div class="popup__container">
+				<button data-close type="button" class="popup__close _icon-cross"></button>
+			</div>
+			<div class="popup__content">
+
+				<div class="popup__text ">
+					<section class="popup-packege-item__main">
+						<div class="popup-packege-item-container">
+							<div class="packeges__item ">
+								<div class="packeges__content content-packege">
+									<div class="content-packege__header">
+										<h3 class="content-packege__title popup-packege__title">Экскурсия “РИО”</h3>
+
+									</div>
+									<div class="content-packege__condtitons">
+										<div class="content-packege__time _icon-route popup-packege__time">Время в пути:<span>1,5 - 2 часа</span></div>
+										<div class="content-packege__long _icon-distance popup-packege__long">Расстояние:<span> 20 - 25 км</span></div>
+										<div class="content-packege__difficulty popup-packege__difficulty _icon-raiting">Сложность:<span>5***</span></div>
+									</div>
+									<div class="content-packege__route route-content">
+										<div class="route-content__title">маршрут <span></span></div>
+										<div class="route-content__text popup-packege__route">
+											<p>Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис -
+												-Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) -
+												-Форсаж</p>
+										</div>
+									</div>
+									<div class="content-packege__actions actions-packege">
+										<button data-popup="#packege-item__popup" type="button" class="actions-packege__button button button_border">Схема маршрута</button>
+
+									</div>
+								</div>
+								<div class="packeges__slider  packege-slider_popup  js-packege-slider_popup ">
+									<div class="packege-slider   swiper">
+										<div class="packege-slider__wrapper swiper-wrapper">
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image01.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image01.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image02.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image02.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image03.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image03.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image01.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image01.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image02.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image02.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+											<div class="packege-slider__slide swiper-slide">
+												<div class="packege-slider__image packege-slider__image-ibg">
+													<picture><source srcset="img/packeges/packege-base/packege-base-image03.webp" type="image/webp"><img src="img/packeges/packege-base/packege-base-image03.jpg" alt="Квадроцикл"></picture>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="packeges-slider__controls">
+										<div class="packeges-slider__pagintion slider-pagination"></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="popup-packege-item__description">
+						<div class="popup-packege-item-container">
+							<h2 class="popup-packege__title">Что посмотрим на маршруте:</h2>
+							<div class="popup-packege-item__text">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue lacus lacus facilisis orci nibh diam. Nisi, a et sit commodo. Pretium sed consectetur risus elementum, habitasse turpis massa.
+
+									In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit. Gravida et faucibus id tortor augue interdum quam sit diam. Laoreet nulla at et arcu pellentesque massa placerat elit. Adipiscing in nullam ipsum est. In sit mi aenean volutpat. Quis lectus nunc nam euismod ultrices aenean. Vitae venenatis ut praesent neque sed quam mauris elementum. Risus blandit leo ut nullam egestas et porta. Ut lacus arcu sagittis sit. </p>
+							</div>
+						</div>
+
+					</section>
+					<section class="popup-packege-item__bikes popup-bikes">
+						<div class="popup-packege-item-container">
+							<h2 class="popup-packege__title">Стоимость экскурсии
+								за 1 квадроцикл:</h2>
+							<div class="popup-bikes__items">
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image01.webp" type="image/webp"><img src="img/popup-packeges/bike-image01.jpg" alt="UFORCE 1000 EPS (U10 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">UFORCE 1000 EPS (U10 EPS)</div>
+										<div class="item-popup-bike__price">4000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image02.webp" type="image/webp"><img src="img/popup-packeges/bike-image02.jpg" alt="CFORCE 1000 EPS (X10 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">CFORCE 1000 EPS (X10 EPS)</div>
+										<div class="item-popup-bike__price">6000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image02.webp" type="image/webp"><img src="img/popup-packeges/bike-image02.jpg" alt="CFMOTO CFORCE 600 EPS"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">CFMOTO CFORCE 600 EPS</div>
+										<div class="item-popup-bike__price">7000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image04.webp" type="image/webp"><img src="img/popup-packeges/bike-image04.jpg" alt="CFORCE 400L EPS (X4 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">CFORCE 400L EPS (X4 EPS)</div>
+										<div class="item-popup-bike__price">8000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image05.webp" type="image/webp"><img src="img/popup-packeges/bike-image05.jpg" alt="ZFORCE 1000"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">ZFORCE 1000</div>
+										<div class="item-popup-bike__price">9000<span></span></div>
+									</div>
+								</div>
+								<div class="popup-bikes__item item-popup-bike  js-item-popup-bike">
+									<button type="button" class="item-popup-bike__info-button js-popup-info-button  ">i</button>
+									<div class="item-popup-bike__info info-popup-bike">
+										<div>
+											<div class="info-popup-bike__power">Мощность: <span>72 л.с.</span></div>
+											<div class="info-popup-bike__engine"> Двигатель: <span>1000 см3</span></div>
+										</div>
+
+									</div>
+									<a href="#" class="item-popup-bike__image item-popup-bike__image-ibg">
+										<picture><source srcset="img/popup-packeges/bike-image01.webp" type="image/webp"><img src="img/popup-packeges/bike-image01.jpg" alt="UFORCE 1000 EPS (U10 EPS)"></picture>
+									</a>
+									<div class="item-popup-bike__body">
+										<div class="item-popup-bike__name">UFORCE 1000 EPS (U10 EPS)</div>
+										<div class="item-popup-bike__price">4000<span></span></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</section>
+					<section class="popup-packege-item__reservation">
+						<div class="popup-packege-item-container">
+							<h2 class="popup-packege__title">Бронирование онлайн</h2>
+							<form action="#" class="popup-form_reservation form-popup">
+								<div class="form-popup__body">
+									<div class="form-popup__item">
+										<div class="form-popup__label">Желаемая дата</div>
+										<div class="form-popup__datepicker  _icon-datepicker form-popup__input ">
+											<input type="text" id="input-datepicker" autocomplete="off" name="form[]" data-error="Выберите дату" data-required>
+										</div>
+
+									</div>
+									<div class="form-popup__item">
+										<div class="form-popup__label">Количество человек</div>
+										<div class="form-popup__quantity quantity form-popup__input">
+											<button type="button" class="quantity__button quantity__button_minus"><span></span></button>
+											<div class="quantity__input">
+												<input type="text" autocomplete="off" name="form[]" value="1">
+											</div>
+											<button type="button" class="quantity__button quantity__button_plus"><span></span></button>
+										</div>
+										<!-- <input type="text" class="form-popup__input form-popup__quantity"> -->
+									</div>
+									<div class="form-popup__item">
+										<div class="form-popup__label">Телефон или WhatsApp</div>
+										<div class="form-popup__input form-popup__phone _icon-phone">
+											<input class="" id="inpute-phone" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="phone">
+										</div>
+
+									</div>
+									<div class="form-popup__item">
+										<div class="form-popup__label">Как к Вам обращаться?</div>
+										<div class="form-popup__input form-popup__phone _icon-user">
+											<input class="" id="inpute-name" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="" placeholder="">
+										</div>
+
+									</div>
+								</div>
+								<button type="submit" class="form-popup__button button">Забронировать</button>
+
+							</form>
+						</div>
+
+
+					</section>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div id="reservation" aria-hidden="true" class="popup popup-reservaton ">
+
+		<div class="popup__wrapper">
+
+			<div class="popup__container">
+				<button data-close type="button" class="popup__close _icon-cross"></button>
+			</div>
+			<div class="popup__content  popup-reservaton__content">
+
+				<div class="popup__text ">
+					<div class="popup-reservation__body">
+						<h2 class="popup-reservation__title">Оставить заявку</h2>
+						<form action="#" class="popup-reservation__form form-reservation">
+							<div class="form-reservation__body">
+								<div class="form-reservation__item form-popup__item">
+									<div class="form-reservation__label form-popup__label">Как к Вам обращаться?</div>
+									<div class="form-reservation__phone form-popup__input form-popup__phone _icon-user">
+										<input class="" id="input-reservation-phone" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="" placeholder="">
+									</div>
+								</div>
+								<div class="form-reservation__item form-popup__item">
+									<div class="form-reservation__label form-popup__label">Телефон или WhatsApp</div>
+									<div class="form-reservation__input form-popup__input form-popup__phone _icon-phone">
+										<input class="" id="input-reservation-phone" autocomplete="off" type="text" name="form[]" data-error="Заполните поле" data-required="phone">
+									</div>
+
+								</div>
+
+							</div>
+							<button type="submit" class="form-popup__button button">Забронировать</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<script src="js/app.min.js?_v=20231010201221"></script>
 
 </body>
 
