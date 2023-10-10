@@ -6492,17 +6492,21 @@
                 },
                 on: {}
             });
-            if (document.querySelector(".packege-slider")) new core(".packege-slider", {
+            if (document.querySelector(".slider-gallery ")) new core(".slider-gallery", {
                 modules: [ Pagination, Parallax, Mousewheel ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: "auto",
-                spaceBetween: 22,
+                spaceBetween: 30,
                 speed: 800,
                 parallax: true,
+                centeredSlides: true,
+                mousewheel: {
+                    sensitivity: 1
+                },
                 loop: true,
                 pagination: {
-                    el: ".packege-slider_base .packeges-slider__pagintion",
+                    el: ".gallery__pagination",
                     clickable: true
                 },
                 breakpoints: {
