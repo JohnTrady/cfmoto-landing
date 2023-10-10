@@ -6492,7 +6492,7 @@
                 },
                 on: {}
             });
-            if (document.querySelector(".packege-slider_base .packege-slider")) new core(".packege-slider_base .packege-slider", {
+            if (document.querySelector(".packege-slider")) new core(".packege-slider", {
                 modules: [ Pagination, Parallax, Mousewheel ],
                 observer: true,
                 observeParents: true,
@@ -6503,66 +6503,6 @@
                 loop: true,
                 pagination: {
                     el: ".packege-slider_base .packeges-slider__pagintion",
-                    clickable: true
-                },
-                breakpoints: {
-                    320: {},
-                    768: {},
-                    991.98: {}
-                },
-                on: {}
-            });
-            if (document.querySelector(".packege-slider_expended .packege-slider")) new core(".packege-slider_expended .packege-slider", {
-                modules: [ Pagination, Parallax, Mousewheel ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: "auto",
-                spaceBetween: 22,
-                speed: 800,
-                parallax: true,
-                loop: true,
-                pagination: {
-                    el: ".packege-slider_expended .packeges-slider__pagintion",
-                    clickable: true
-                },
-                breakpoints: {
-                    320: {},
-                    768: {},
-                    991.98: {}
-                },
-                on: {}
-            });
-            if (document.querySelector(".packege-slider_experience .packege-slider")) new core(".packege-slider_experience .packege-slider", {
-                modules: [ Pagination, Parallax, Mousewheel ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: "auto",
-                spaceBetween: 22,
-                speed: 800,
-                parallax: true,
-                loop: true,
-                pagination: {
-                    el: ".packege-slider_experience .packeges-slider__pagintion",
-                    clickable: true
-                },
-                breakpoints: {
-                    320: {},
-                    768: {},
-                    991.98: {}
-                },
-                on: {}
-            });
-            if (document.querySelector(".packege-slider_popup .packege-slider")) new core(".packege-slider_popup .packege-slider", {
-                modules: [ Pagination, Parallax, Mousewheel ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: "auto",
-                spaceBetween: 22,
-                speed: 800,
-                parallax: true,
-                loop: true,
-                pagination: {
-                    el: ".packege-slider_popup .packeges-slider__pagintion",
                     clickable: true
                 },
                 breakpoints: {
