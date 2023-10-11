@@ -2648,6 +2648,79 @@
             }
         }
         flsModules.select = new SelectConstructor({});
+        function initSliders() {
+            if (document.querySelector(".main-slider")) new Swiper(".main-slider", {
+                modules: [ Navigation, Pagination, Parallax, Autoplay ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                parallax: true,
+                direction: "horizontal",
+                loop: true,
+                autoplay: {
+                    delay: 3e3,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: ".controls-main-slider__pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {},
+                    768: {
+                        direction: "vertical"
+                    }
+                },
+                on: {}
+            });
+            if (document.querySelector(".packege-slider")) new Swiper(".packege-slider", {
+                modules: [ Pagination, Parallax, Mousewheel ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 22,
+                speed: 800,
+                parallax: true,
+                loop: true,
+                pagination: {
+                    el: ".packege-slider_base .packeges-slider__pagintion",
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {},
+                    768: {},
+                    991.98: {}
+                }
+            });
+            if (document.querySelector(".slider-gallery ")) new Swiper(".slider-gallery", {
+                modules: [ Pagination, Parallax, Mousewheel ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 30,
+                speed: 800,
+                parallax: true,
+                centeredSlides: true,
+                mousewheel: {
+                    sensitivity: 1
+                },
+                loop: true,
+                pagination: {
+                    el: ".gallery__pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {},
+                    768: {},
+                    991.98: {}
+                }
+            });
+        }
+        window.addEventListener("load", (function(e) {
+            initSliders();
+        }));
         class ScrollWatcher {
             constructor(props) {
                 let defaultConfig = {
