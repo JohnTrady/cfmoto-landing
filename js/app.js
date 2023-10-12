@@ -4953,57 +4953,6 @@ PERFORMANCE OF THIS SOFTWARE.
         var air_datepicker_default = __webpack_require__.n(air_datepicker);
         const index_es = air_datepicker_default();
         new index_es("#input-datepicker", {});
-        window.onload = function() {
-            const documentActions = e => {
-                let targetEl = e.target;
-                if (targetEl.classList.contains("js-popup-info-button")) targetEl.closest(".js-item-popup-bike").classList.toggle("show-info");
-                if (targetEl.closest("[data-pid]")) {
-                    const packegeSliderId = targetEl.dataset.pid;
-                    getPackege(packegeSliderId);
-                    loadPopupImages(packegeSliderId);
-                }
-            };
-            function loadPopupImages(id) {
-                if (document.querySelector(".packeges__items")) {
-                    const packegeSiders = document.querySelectorAll(".packeges__slider");
-                    const packegeSliderPopup = document.querySelector(".packege-slider_popup");
-                    packegeSliderPopup.innerHTML = packegeSiders[id - 1].innerHTML;
-                }
-            }
-            const loadPackege = (data, id) => {
-                document.querySelectorAll("[data-packege-id]");
-                const packegeTitle = document.querySelector(".popup-packege__title");
-                const packegeTime = document.querySelector(".popup-packege__time span");
-                const packegeLong = document.querySelector(".popup-packege__long span");
-                const packegeDifficulty = document.querySelector(".popup-packege__difficulty span");
-                const packegeRoute = document.querySelector(".popup-packege__route");
-                data.packeges.forEach((item => {}));
-                packegeTitle.innerHTML = data.packeges[id - 1].title;
-                packegeTime.innerHTML = data.packeges[id - 1].time;
-                packegeLong.innerHTML = data.packeges[id - 1].long;
-                packegeDifficulty.innerHTML = data.packeges[id - 1].difficulty;
-                packegeRoute.innerHTML = data.packeges[id - 1].route;
-            };
-            async function getPackege(id) {
-                const file = "../../files/packeges.json";
-                let response = await fetch(file, {
-                    method: "GET"
-                });
-                if (response.ok) {
-                    let result = await response.json();
-                    loadPackege(result, id);
-                } else alert("Ошибка");
-            }
-            document.addEventListener("click", documentActions);
-        };
-        if (document.querySelector("[data-scroll]")) {
-            const headerElement = document.querySelector("[data-scroll]");
-            const callback = (entries, observer) => {
-                if (entries[0].isIntersecting) headerElement.classList.remove("_scroll"); else headerElement.classList.add("_scroll");
-            };
-            const headerObserver = new IntersectionObserver(callback);
-            headerObserver.observe(headerElement);
-        }
         function ssr_window_esm_isObject(obj) {
             return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
         }
@@ -8929,9 +8878,82 @@ PERFORMANCE OF THIS SOFTWARE.
                 }
             });
         }
+        function initPopupSlider() {
+            if (document.querySelector(".packege-slider_popup .packege-slider")) new core(".packege-slider_popup .packege-slider", {
+                modules: [ Pagination ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 22,
+                speed: 800,
+                parallax: true,
+                loop: true,
+                pagination: {
+                    el: ".packege-slider_popup .packeges-slider__pagintion",
+                    clickable: true
+                },
+                breakpoints: {
+                    320: {},
+                    768: {},
+                    991.98: {}
+                }
+            });
+        }
         window.addEventListener("load", (function(e) {
             initSliders();
         }));
+        window.onload = function() {
+            const documentActions = e => {
+                let targetEl = e.target;
+                if (targetEl.classList.contains("js-popup-info-button")) targetEl.closest(".js-item-popup-bike").classList.toggle("show-info");
+                if (targetEl.closest("[data-pid]")) {
+                    const packegeSliderId = targetEl.dataset.pid;
+                    getPackege(packegeSliderId);
+                    loadPopupImages(packegeSliderId);
+                }
+            };
+            function loadPopupImages(id) {
+                if (document.querySelector(".packeges__items")) {
+                    const packegeSiders = document.querySelectorAll(".packeges__slider");
+                    const packegeSliderPopup = document.querySelector(".packege-slider_popup");
+                    packegeSliderPopup.innerHTML = packegeSiders[id - 1].innerHTML;
+                    initPopupSlider();
+                }
+            }
+            const loadPackege = (data, id) => {
+                document.querySelectorAll("[data-packege-id]");
+                const packegeTitle = document.querySelector(".popup-packege__title");
+                const packegeTime = document.querySelector(".popup-packege__time span");
+                const packegeLong = document.querySelector(".popup-packege__long span");
+                const packegeDifficulty = document.querySelector(".popup-packege__difficulty span");
+                const packegeRoute = document.querySelector(".popup-packege__route");
+                data.packeges.forEach((item => {}));
+                packegeTitle.innerHTML = data.packeges[id - 1].title;
+                packegeTime.innerHTML = data.packeges[id - 1].time;
+                packegeLong.innerHTML = data.packeges[id - 1].long;
+                packegeDifficulty.innerHTML = data.packeges[id - 1].difficulty;
+                packegeRoute.innerHTML = data.packeges[id - 1].route;
+            };
+            async function getPackege(id) {
+                const file = "../../files/packeges.json";
+                let response = await fetch(file, {
+                    method: "GET"
+                });
+                if (response.ok) {
+                    let result = await response.json();
+                    loadPackege(result, id);
+                } else alert("Ошибка");
+            }
+            document.addEventListener("click", documentActions);
+        };
+        if (document.querySelector("[data-scroll]")) {
+            const headerElement = document.querySelector("[data-scroll]");
+            const callback = (entries, observer) => {
+                if (entries[0].isIntersecting) headerElement.classList.remove("_scroll"); else headerElement.classList.add("_scroll");
+            };
+            const headerObserver = new IntersectionObserver(callback);
+            headerObserver.observe(headerElement);
+        }
         window["FLS"] = true;
         isWebp();
         menuInit();
