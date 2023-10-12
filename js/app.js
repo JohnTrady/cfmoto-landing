@@ -2743,7 +2743,7 @@
                     const map = document.querySelector(".contacts__map");
                     const loadMap = () => {
                         const mapLink = document.querySelector(".contacts__map noscript");
-                        map.innerHTML += mapLink.innerHTML;
+                        map.innerHTML += `${mapLink.innerHTML}`;
                     };
                     loadMap();
                 }
